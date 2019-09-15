@@ -1,0 +1,22 @@
+<!--pages/welcome/welcome.wxml-->
+
+<view class="welcome-view">
+  <view class="welcome-views">
+    <view class="welcome-swiper-view">
+      <swiper indicator-color="rgba(216,154,196,1)" indicator-active-color="rgba(239,1,160,1)" class="welcome-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{bannerList}}" wx:key="{{item.index}}">
+          <swiper-item>
+            <view class="welcome-text-en">{{item.en}}</view>
+            <view class="welcome-text-zh">{{item.zh}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <button bindtap="getStarted" class="comm-button welcome-button" hover-class="comm-button-hover" wx:if="{{hasUserInfo}}">GET STARTED</button>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="comm-button welcome-button" hover-class="comm-button-hover" wx:else>获取头像昵称</button>
+  </view>
+</view>
+<!-- <view class="welcome-view" wx:else>
+  <view class="welcome-views welcom-image-backg">
+  </view>
+</view> -->

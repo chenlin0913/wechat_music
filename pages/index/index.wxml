@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<!-- <mp-navigation-bar loading="{{loading}}" show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="Navigation" back="{{true}}"></mp-navigation-bar> -->
+<view class="index-search-view" style="padding-top:{{statusBarHeight}}rpx">
+  <input confirm-type="search" placeholder="Search" placeholder-class="index-placeholder-class" class="index-search-input" />
+</view>
+<view class="index-view">
+
+  <view class="index-pay-music-view" style="margin-top:{{statusBarHeight+74}}rpx">
+    <view class="pay-music-view loader-inner line-scale-pulse-out-rapid">
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view class="search-last-view"></view>
+    </view>
+    <text>男孩</text>
+  </view>
+
+  <view class="index-hot-song-view">
+    <view class="title">
+      <text class="left">Hot song</text>
+      <text class="right">View all</text>
+    </view>
+    <view class="list-view">
+      <view class="li-view" wx:for="{{5}}" wx:key="{{index}}">
+        <view class="li">
+          <view class="left">0{{index+1}}</view>
+          <view class="center">
+            <image src=""></image>
+
+          </view>
+          <view class="centers">
+            <view class="name">Nice For What</view>
+            <view class="zz">Avinci John</view>
+          </view>
+          <view class="right">···</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="index-swiper-view">
+    <view class="index-swiper-title">Top Trending</view>
+    <swiper bindchange="swiperChange" indicator-color="rgba(96,94,99,1)" indicator-active-color="rgba(255,255,255,1)" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="index-rec-view">
+    <view class="title">
+      <text class="left">REC song list</text>
+      <text class="right">View all</text>
+    </view>
+    <view class="index-res-list-view">
+      <view class="li" wx:for="{{6}}" wx:key="{{index}}">
+
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <mp-tabbar my-class="index-tabbar-view" style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{tabbarList}}" bindchange="tabChange" current="{{current}}"></mp-tabbar> -->

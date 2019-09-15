@@ -1,0 +1,62 @@
+/* pages/welcome/welcome.wxss */
+
+.welcome-view, .welcome-views {
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+}
+
+.welcome-view {
+  background: rgba(109, 109, 109, 1);
+}
+
+.welcome-views {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.welcome-button {
+  width: 590rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 32rpx;
+  font-family: Roboto-Bold;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  bottom: 98rpx;
+  left: 50%;
+  margin-left: -295rpx;
+}
+
+.welcome-text-en {
+  font-size: 56rpx;
+  font-family: Roboto-Medium;
+  color: rgba(238, 238, 238, 1);
+  text-align: center;
+  width: 590rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  margin-top: 300rpx;
+}
+
+.welcome-text-zh {
+  font-size: 28rpx;
+  font-family: Montserrat-Medium;
+  color: rgba(255, 255, 255, 1);
+  width: 590rpx;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.welcome-swiper-view, .welcome-swiper {
+  height: 85vh;
+}
+
+.welcome-swiper .wx-swiper-dot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 0rpx;
+}
+.welcom-image-backg{
+  background: url('http://sjbz.fd.zol-img.com.cn/t_s640x960c/g5/M00/00/02/ChMkJ1fJU2mIL74OAAupEAkiGIEAAU9pwO6AZgAC6ko696.jpg') no-repeat center;
+  background-size: cover;
+}
