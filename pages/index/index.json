@@ -1,4 +1,7 @@
 {
-  "usingComponents": {"mp-navigation-bar": "../../weui/navigation-bar/navigation-bar"},
+  "usingComponents": {
+    "mp-navigation-bar": "../../weui/navigation-bar/navigation-bar",
+    "common-play":"../../common-play/index"
+    },
   "navigationBarTextStyle": "white"
 }

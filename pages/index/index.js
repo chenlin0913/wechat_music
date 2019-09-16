@@ -9,6 +9,7 @@ Component({
           selected: 0
         })
       }
+      console.log(this)
     }
   },
   /**
@@ -17,84 +18,137 @@ Component({
   data: {
     tabbarList: getApp().globalData.tabbarList,
     statusBarHeight: getApp().globalData.statusBarHeight,
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
+    imgUrls: [],
+    hotList:[],
+    recList:[],
     indicatorDots: true,
     autoplay: false,
     interval: 5000,
     duration: 1000,
-    current:0
+    current: 0
   },
-  tabChange(e){
-    
-    wx.switchTab({
-      url: e.detail.item.pagePath
-    })
-  },
-  swiperChange(e){
+  methods: {
+    recAll() {
+      this.common_play.showPlay();
+    },
+    hotAll(){
+      this.common_play.hidePlay();
+    },
+    swiperChange(e) {
 
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    console.log(options)
-  },
+    },
+    /**
+     * 获取推荐歌单
+     */
+    getRecSong(){
+      getApp().wxRequest('GET', 'personalized?limit=6', {}, (res) => {
+        this.setData({
+          recList: res.result
+        })
+      }, (err) => {
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+      });
+    },
+    /**
+     * 获取热门歌曲排行
+     */
+    getHotSong(){
+      getApp().wxRequest('GET', 'top/list?idx=1', {}, (res) => {
+        //只取5条数据
+        var arrs = [];
+        for(var i =0; i <= 4; i++){
+          arrs.push(res.playlist.tracks[i])
+        }
+        this.setData({
+          hotList: arrs
+        })
+      }, (err) => {
 
-  },
+      });
+    },
+    /**
+     * 获取首页banner
+     */
+    getIndexBanner(){
+      getApp().wxRequest('GET', 'banner?type=2', {}, (res) => {
+        this.setData({
+          imgUrls: res.banners
+        })
+      }, (err) => {
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    this.setData({
-      dialogShow: true
-    })
-    
-  },
+      });
+    },
+    tabChange(e) {
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    this.setData({
-      current: 0
-    })
-  },
+      wx.switchTab({
+        url: e.detail.item.pagePath
+      })
+    },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function(options) {
+      console.log(options)
+      //获得common-play组件
+      this.common_play = this.selectComponent("#common-play");
+      this.getIndexBanner();
+      this.getHotSong();
+      this.getRecSong();
+    },
 
-  },
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function() {
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+    },
 
-  },
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function() {
+      this.setData({
+        dialogShow: true
+      })
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
+    },
 
-  },
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide: function() {
+      this.setData({
+        current: 0
+      })
+    },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload: function() {
 
+    },
+
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh: function() {
+
+    },
+
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom: function() {
+
+    },
+
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function() {
+
+    }
   }
 })

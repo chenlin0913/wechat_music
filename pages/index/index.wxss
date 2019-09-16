@@ -8,14 +8,31 @@
 .index-res-list-view .li {
   width: 208rpx;
   height: 122rpx;
-  background: rgba(109, 109, 109, 1);
   border-radius: 8rpx;
+}
+
+.index-res-list-view .ul {
+  width: 208rpx;
   float: left;
   margin-right: 32rpx;
   margin-bottom: 32rpx;
 }
-.index-res-list-view .li:nth-child(3n){
+
+.index-res-list-view .ul:nth-child(3n) {
   margin-right: 0rpx;
+}
+
+.index-res-list-view text {
+  font-size: 24rpx;
+  font-family: Roboto-Regular;
+  color: rgba(129, 122, 122, 1);
+  text-align: left;
+  width: 208rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 10rpx;
 }
 
 .index-rec-view {

@@ -1,0 +1,11 @@
+<!--common-play/index.wxml-->
+<view class="comm-play-view" wx:if="{{isShow}}" animation="{{animationData}}">
+  <view class="play-view" >
+    <image src="/image/welcome.jpg" class="music-logo"></image>
+    <text class="music-name">Come Back Home</text>
+    <image src="/image/icon_play_top.svg" class="music-top"></image>
+    <image src="/image/icon_play_stop.svg" class="music-play" wx:if="{{isPlay}}" bindtap="setIsPlay" data-flag="false"></image>
+    <image src="/image/icon_play.svg" class="music-play" wx:else bindtap="setIsPlay" data-flag="true"></image>
+    <image src="/image/icon_play_next.svg" class="music-next"></image>
+  </view>
+</view>

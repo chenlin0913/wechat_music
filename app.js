@@ -4,7 +4,25 @@ App({
   setWatcher(page) {
     watch(page);
   },
-  onLaunch: function () {
+  wxRequest(method, url, data, callback, errFun) {
+    wx.request({
+      url: this.globalData.api+url,
+      method: method,
+      data: data,
+      // header: {
+      //   'content-type': method == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded',
+      //   'Accept': 'application/json'
+      // },
+      // dataType: 'json',
+      success: function(res) {
+        callback(res.data);
+      },
+      fail: function(err) {
+        errFun(res);
+      }
+    })
+  },
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -43,10 +61,10 @@ App({
     console.log(this.globalData.statusBarHeight)
   },
   globalData: {
+    api: 'http://musicapi.leanapp.cn/',
     userInfo: null,
-    statusBarHeight:0,
-    tabbarList: [
-      {
+    statusBarHeight: 0,
+    tabbarList: [{
         "pagePath": "/pages/index/index",
         "iconPath": "../../image/icon_home.png",
         "selectedIconPath": "../../image/icon_home_hl.png",
