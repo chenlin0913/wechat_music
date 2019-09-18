@@ -6,10 +6,18 @@ Component({
       if (typeof this.getTabBar === 'function' &&
         this.getTabBar()) {
         this.getTabBar().setData({
-          selected: 0
+          selected: 0,
+          show:true
         })
       }
-      console.log(this)
+    },
+    hide(){
+      if (typeof this.getTabBar === 'function' &&
+        this.getTabBar()) {
+        this.getTabBar().setData({
+          show: false
+        })
+      }
     }
   },
   /**
@@ -36,6 +44,16 @@ Component({
     },
     swiperChange(e) {
 
+    },
+    goSongs(e){
+      wx.navigateTo({
+        url: '../../package-one/pages/songs?id=' + e.currentTarget.dataset.id,
+      })
+    },
+    searchFocus(){
+      wx.navigateTo({
+        url: '../../package-one/pages/search',
+      })
     },
     /**
      * 获取推荐歌单
@@ -89,12 +107,15 @@ Component({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-      console.log(options)
       //获得common-play组件
       this.common_play = this.selectComponent("#common-play");
-      this.getIndexBanner();
-      this.getHotSong();
-      this.getRecSong();
+      // this.getIndexBanner();
+      // this.getHotSong();
+      // this.getRecSong();
+      
+      wx.navigateTo({
+        url: '../../package-one/pages/songs?id=1369798757',
+      })
     },
 
     /**

@@ -1,0 +1,44 @@
+<!--package-one/pages/songs.wxml-->
+<scroll-view class="page" style="background-color:{{background}}">
+  <mp-navigation-bar loading="{{loading}}" show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="{{songDetails[0].al.name}}" back="{{true}}"></mp-navigation-bar>
+  <view class="songs-views">
+    <view class="songs-swiper-view">
+      <swiper current="{{1}}" indicator-color="rgba(96,94,99,1)" indicator-active-color="rgba(255,255,255,1)" class="song-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange">
+        <swiper-item>
+          <scroll-view scroll-y class="songs-index1-scroll-view">
+            <ar-view ar="{{songDetails[0].ar}}" al="{{songDetails[0].al}}" artist="{{artist}}"></ar-view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item>
+          <play-view ar="{{songDetails[0].ar}}" al="{{songDetails[0].al}}" status="{{status}}"></play-view>
+        </swiper-item>
+        <swiper-item>
+          <lyrics-view></lyrics-view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="songs-play-view" bindtap="updatePlayStatus">
+      <view class="songs-play-slider-view">
+        <slider bindchange="sliderChange" min="0" max="100" backgroundColor="#BDB9B9" activeColor="#707070" block-size="14"/>
+      </view>
+      <view class="songs-play-time">
+        <label>00:00</label>
+        <label>3:05</label>
+      </view>
+      <view class="songs-play-m">
+        <view class="play-type-view">
+          <image src="../../image/xunhuangplay.svg" data-type="循环"></image>
+          <!-- <image src="../../image/suijiplay.svg" data-type="随机"></image>
+          <image src="../../image/shunxuplay.svg" data-type="顺序"></image>
+          <image src="../../image/danquxunhuangplay.svg" data-type="单曲循环"></image> -->
+        </view>
+        <view class="paly-top-view">
+          <image src="../../image/icon_play_top.svg"></image>
+        </view>
+        <view class="paly-play-view">
+        <!-- <image src=""></image> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

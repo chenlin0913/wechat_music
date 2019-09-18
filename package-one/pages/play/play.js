@@ -1,25 +1,14 @@
-// index/radio.js
+// package-one/pages/play/play.js
 Component({
-  pageLifetimes: {
-    show() {
-      if (typeof this.getTabBar === 'function' &&
-        this.getTabBar()) {
-        this.getTabBar().setData({
-          selected: 2,
-          show: true
-        })
-      }
-    },
-    hide() {
-      if (typeof this.getTabBar === 'function' &&
-        this.getTabBar()) {
-        this.getTabBar().setData({
-          show: false
-        })
-      }
-    }
-  },
 
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    ar: Object,
+    al: Object,
+    status:String
+  },
   /**
    * 页面的初始数据
    */

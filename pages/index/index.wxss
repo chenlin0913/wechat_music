@@ -54,6 +54,9 @@
   font-size: 32rpx;
   font-family: Roboto-Medium;
   color: rgba(238, 238, 238, 1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .index-hot-song-view .list-view .zz {
@@ -61,6 +64,9 @@
   font-family: Roboto-Regular;
   color: rgba(129, 122, 122, 1);
   margin-top: 5rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .index-hot-song-view .list-view {

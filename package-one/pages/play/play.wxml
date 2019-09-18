@@ -1,0 +1,20 @@
+<!--package-one/pages/play/play.wxml-->
+<view class="play-view">
+<!-- <view class='animationSlow' style='animation-duration: {{animationTime}};-webkit-animation-duration: {{animationTime}};animation-play-state:{{status}};-webkit-animation-play-state:{{status}};'></view> -->
+  <view class="paly-image-view">
+    <image src="{{al.picUrl}}" class="animation-image" style="animation-play-state:{{status}};-webkit-animation-play-state:{{status}};"></image>
+  </view>
+  <!-- <view class="play-songs-name">{{al.name}}</view> -->
+  <view class="play-songs-ar">
+    <label wx:for="{{ar}}" wx:key="{{index}}">{{item.name}}</label>
+  </view>
+  <view class="play-songs-lyrics">
+  It is a long established fact that a reader
+  </view>
+  <view class="play-songs-svg-image">
+    <image src="../../../image/link.svg"></image>
+    <image src="../../../image/addlist.svg"></image>
+    <image src="../../../image/shouc.svg"></image>
+    <image src="../../../image/xiazai.svg"></image>
+  </view>
+</view>

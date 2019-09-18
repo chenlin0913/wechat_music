@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-navigation-bar": "../../weui/navigation-bar/navigation-bar",
+    "ar-view":"ar/ar",
+    "play-view": "play/play",
+    "lyrics-view": "lyrics/lyrics"
+  },
+  "navigationBarTextStyle": "white"
+}

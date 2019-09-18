@@ -1,0 +1,102 @@
+/* package-one/pages/play/play.wxss */
+
+.play-view, .paly-image-view {
+  width: 100%;
+}
+
+.paly-image-view {
+  height: 414rpx;
+  margin-top: 100rpx;
+  text-align: center;
+}
+
+.paly-image-view image {
+  width: 414rpx;
+  height: 414rpx;
+  background: rgba(109, 109, 109, 1);
+  border-radius: 50%;
+}
+
+.play-songs-name {
+  padding: 0rpx 30rpx;
+  text-align: center;
+  font-size: 42rpx;
+  font-family: Roboto-Bold;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 44rpx;
+}
+
+.play-songs-ar {
+  padding: 0rpx 30rpx;
+  text-align: center;
+  font-size: 26rpx;
+  font-family: Roboto-Regular;
+  color: rgba(255, 255, 255, 1);
+}
+
+.animation-image {
+  background-color: orange;
+  animation-name: myfirst; /*动画的名称 */
+  animation-duration: 7000ms; /*动画从开始到结束的时间*/
+  animation-timing-function: linear; /*动画执行快慢的参数*/
+  animation-iteration-count: infinite; /*动画执行多少次的参数*//*以下是兼容ios所需，参数意义与上相同*/
+  -webkit-animation-name: myfirst;
+  -webkit-animation-duration: 7000ms;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes myfirst {
+  /*开始转的角度*/
+
+  from {
+    transform: rotate(0deg);
+  }/*结束的角度*/
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*兼容ios*/
+
+@-webkit-keyframes myfirst {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.play-songs-lyrics {
+  padding: 0rpx 30rpx;
+  text-align: center;
+  margin-top: 58rpx;
+  font-size: 28rpx;
+  font-family: Roboto-Regular;
+  color: rgba(122, 124, 129, 1);
+}
+
+.play-songs-svg-image {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 70rpx;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+
+.play-songs-svg-image image:first-child {
+  margin-left: 114rpx;
+}
+
+.play-songs-svg-image image:last-child {
+  margin-right: 114rpx;
+}
+.play-songs-svg-image image{
+  width:46rpx;
+  height: 46rpx;
+}

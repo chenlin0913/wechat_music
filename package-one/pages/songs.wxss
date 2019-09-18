@@ -1,0 +1,63 @@
+/* package-one/pages/songs.wxss */
+.page{
+  width: 100%;
+  height: 100vh;
+}
+.song-swiper,.songs-index1-scroll-view {
+  height: 830rpx;
+}
+.songs-swiper-view{
+  margin-top: 88rpx;
+}
+.song-swiper .wx-swiper-dot {
+  width: 39rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+}
+.song-swiper .wx-swiper-dots {
+    position: relative;
+    /* left: unset !important;
+    right: 0; */
+    top: 0;
+}
+.songs-play-view{
+  width: 100%;
+  height: 262rpx;
+}
+.songs-play-slider-view{
+  padding: 0rpx 20rpx;
+}
+
+.songs-play-time label{
+  font-size:28rpx;
+  font-family:Roboto-Medium;
+  color:rgba(255,255,255,1);
+}
+.songs-play-time label:first-child{
+  float: left;
+  margin-left: 40rpx;
+}
+.songs-play-time label:last-child{
+  float: right;
+  margin-right: 50rpx;
+}
+.songs-play-m{
+  width: 100%;
+  height: 146rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.songs-play-m .play-type-view{
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 40rpx;
+}
+.play-type-view image{
+  width: 32rpx;
+  height: 32rpx;
+}
+.paly-top-view,.paly-top-view image{
+  width: 24rpx;
+  height: 24rpx;
+}

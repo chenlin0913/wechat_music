@@ -1,0 +1,10 @@
+<!--package-one/pages/ar/ar.wxml-->
+<view class="ar-view">
+  <view class="ar-music-name">{{al.name}}</view>
+  <view class="ar-name">
+    <text wx:for="{{ar}}" wx:key="{{index}}" decode="true">{{item.name}}&nbsp;</text>
+  </view>
+  <view class="ar-details">
+    <view class="text" wx:for="{{artist}}" wx:key="{{index}}">{{item.briefDesc}}</view>
+  </view>
+</view>

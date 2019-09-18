@@ -5,7 +5,16 @@ Component({
       if (typeof this.getTabBar === 'function' &&
         this.getTabBar()) {
         this.getTabBar().setData({
-          selected: 1
+          selected: 1,
+          show: true
+        })
+      }
+    },
+    hide() {
+      if (typeof this.getTabBar === 'function' &&
+        this.getTabBar()) {
+        this.getTabBar().setData({
+          show: false
         })
       }
     }

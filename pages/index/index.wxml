@@ -1,7 +1,6 @@
 <!--index.wxml-->
-<!-- <mp-navigation-bar loading="{{loading}}" show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="Navigation" back="{{true}}"></mp-navigation-bar> -->
 <view class="index-search-view" style="padding-top:{{statusBarHeight}}rpx">
-  <input confirm-type="search" placeholder="Search" placeholder-class="index-placeholder-class" class="index-search-input" />
+  <input bindtap="searchFocus" confirm-type="search" placeholder="Search" placeholder-class="index-placeholder-class" class="index-search-input" />
 </view>
 <scroll-view class="index-view">
 
@@ -22,7 +21,7 @@
       <text class="right" bindtap="hotAll">View all</text>
     </view>
     <view class="list-view">
-      <view class="li-view" wx:for="{{hotList}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">
+      <view class="li-view" wx:for="{{hotList}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item" data-id="{{item.id}}" bindtap="goSongs">
         <view class="li">
           <view class="left">0{{index+1}}</view>
           <view class="center">

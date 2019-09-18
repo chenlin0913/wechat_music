@@ -1,0 +1,18 @@
+<!--package-one/pages/search.wxml-->
+<mp-navigation-bar loading="{{loading}}" show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="Search" back="{{true}}"></mp-navigation-bar>
+<view class="input-search-view"><input bindinput="bindKeyInput" confirm-type="search" placeholder="Search" placeholder-class="index-placeholder-class" class="index-search-input" focus="{{true}}"/></view>
+<view class="search-list-view" wx:for="{{serarchList.songs}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="index">
+  <view class="img-view">
+    <image src="{{item.album.artist.img1v1Url}}"></image>
+  </view>
+  <view class="search-right-view">
+    <view class="top">
+    {{item.name}}
+    </view>
+    <view class="bom">
+      <label wx:for="{{item.artists}}"  wx:for-index="indexs" wx:for-item="items" wx:key="{{indexs}}">
+        {{items.name}} 
+      </label>
+    </view>
+  </view>
+</view>

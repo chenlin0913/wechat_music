@@ -55,39 +55,15 @@ App({
       }
     })
     var res = wx.getSystemInfoSync();
-    console.log(res)
     // this.globalData.statusBarHeight = (res.statusBarHeight + 55) * 2;//无头部导航栏时
     this.globalData.statusBarHeight = res.statusBarHeight * 2; //有头部导航栏时
-    console.log(this.globalData.statusBarHeight)
   },
   globalData: {
     api: 'http://musicapi.leanapp.cn/',
     userInfo: null,
     statusBarHeight: 0,
-    tabbarList: [{
-        "pagePath": "/pages/index/index",
-        "iconPath": "../../image/icon_home.png",
-        "selectedIconPath": "../../image/icon_home_hl.png",
-        "text": "Home"
-      },
-      {
-        "pagePath": "/pages/explore/explore",
-        "iconPath": "../../image/icon_explore.png",
-        "selectedIconPath": "../../image/icon_explore_hl.png",
-        "text": "Explore"
-      },
-      {
-        "pagePath": "/pages/radio/radio",
-        "iconPath": "../../image/icon_radio.png",
-        "selectedIconPath": "../../image/icon_radio_hl.png",
-        "text": "Radio"
-      },
-      {
-        "pagePath": "/pages/account/account",
-        "iconPath": "../../image/icon_account.png",
-        "selectedIconPath": "../../image/icon_account_hl.png",
-        "text": "Account"
-      }
-    ],
+    play:{
+      status: 'paused'//暂停：paused；播放：running
+    }
   }
 })

@@ -1,0 +1,36 @@
+/* package-one/pages/ar/ar.wxss */
+
+.ar-view {
+  width: 100%;
+}
+
+.ar-music-name {
+  margin: 390rpx 30rpx 0rpx 30rpx;
+  font-size: 72rpx;
+  font-family: Roboto-Bold;
+  color: rgba(255, 255, 255, 1);
+  text-align: left;
+}
+
+.ar-name {
+  font-size: 36rpx;
+  font-family: Roboto-Regular;
+  color: rgba(255, 255, 255, 1);
+  margin: 0rpx 30rpx 0rpx 30rpx;
+}
+
+.ar-name text {
+  float: left;
+}
+
+.ar-details {
+  margin: 50rpx 30rpx 0rpx 30rpx;
+}
+
+.ar-details .text {
+  font-size: 28rpx;
+  font-family: Roboto-Regular;
+  color: rgba(238, 238, 238, 1);
+  text-align: left;
+  margin-top: 10rpx;
+}

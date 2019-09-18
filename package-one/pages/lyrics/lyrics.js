@@ -1,24 +1,5 @@
-// index/radio.js
-Component({
-  pageLifetimes: {
-    show() {
-      if (typeof this.getTabBar === 'function' &&
-        this.getTabBar()) {
-        this.getTabBar().setData({
-          selected: 2,
-          show: true
-        })
-      }
-    },
-    hide() {
-      if (typeof this.getTabBar === 'function' &&
-        this.getTabBar()) {
-        this.getTabBar().setData({
-          show: false
-        })
-      }
-    }
-  },
+// package-one/pages/lyrics/lyrics.js
+Page({
 
   /**
    * 页面的初始数据

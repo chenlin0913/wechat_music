@@ -7,6 +7,18 @@
     "pages/welcome/welcome",
     "pages/logs/logs"
   ],
+  "subPackages":[
+    {
+      "root": "package-one",
+      "pages": [
+        "pages/search",
+        "pages/songs",
+        "pages/ar/ar",
+        "pages/play/play",
+        "pages/lyrics/lyrics"
+      ]
+    }
+  ],
   "tabBar": {
     "custom": true,
     "color": "#4E4F52",
