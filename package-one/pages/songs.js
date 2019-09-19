@@ -1,4 +1,6 @@
 // package-one/pages/songs.js
+var innerAudioContext;
+var lrc = require('../../utils/analysisLrc.js');
 Page({
 
   /**
@@ -15,13 +17,32 @@ Page({
     duration: 500,
     songDetails:'',
     artist: [], 
-    status: getApp().globalData.status
+    status: getApp().globalData.status,
+    playUrl:'',
+    sliderVal:0,
+    start:'00:00',
+    end:'00:00'
+  },
+  /**
+   * 获取播放歌曲歌词
+   */
+  getSongsLyric(id){
+    getApp().wxRequest('GET', 'lyric?id=' + id, {}, (res) => {
+      this.setData({
+        songDetails: res.songs
+      })
+      for (var i = 0; i < res.songs[0].ar.length; i++) {
+        this.arDetails(res.songs[0].ar[i].id);
+      }
+    }, (err) => {
+
+    });
   },
   /**
    * 播放进度
    */
   sliderChange(e){
-
+    innerAudioContext.seek(innerAudioContext.duration * e.detail.value / 100);
   },
   /**
    * 修改播放状态
@@ -32,11 +53,15 @@ Page({
       this.setData({
         status:'running'
       })
+      //播放
+      innerAudioContext.play();
     }else{
       getApp().globalData.status = 'paused';
       this.setData({
         status: 'paused'
       })
+      //暂停
+      innerAudioContext.pause();
     }
   },
   swiperChange(e){
@@ -83,12 +108,37 @@ Page({
 
     });
   },
+  getSongsUrl(id){
+    this.setData({
+      playUrl: 'https://music.163.com/song/media/outer/url?id=' + id+'.mp3'
+    })
+    let _this = this;
+    innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.autoplay = true;
+    innerAudioContext.src = this.data.playUrl;
+    
+    innerAudioContext.onPlay(() => {
+      console.log('开始播放')
+    })
+    innerAudioContext.onError((res) => {
+      console.log(res.errMsg)
+      console.log(res.errCode)
+    })
+    innerAudioContext.onTimeUpdate(() => {
+      _this.setData({
+        sliderVal: innerAudioContext.currentTime / innerAudioContext.duration*100,
+        start: lrc.default.changeTime(innerAudioContext.currentTime),
+        end: lrc.default.changeTime(innerAudioContext.duration)
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.songDetails(options.id);
-    
+    this.getSongsUrl(options.id);
+    this.getSongsLyric(options.id);
   },
 
   /**

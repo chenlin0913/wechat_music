@@ -109,13 +109,13 @@ Component({
     onLoad: function(options) {
       //获得common-play组件
       this.common_play = this.selectComponent("#common-play");
-      // this.getIndexBanner();
-      // this.getHotSong();
-      // this.getRecSong();
+      this.getIndexBanner();
+      this.getHotSong();
+      this.getRecSong();
       
-      wx.navigateTo({
-        url: '../../package-one/pages/songs?id=1369798757',
-      })
+      // wx.navigateTo({
+      //   url: '../../package-one/pages/songs?id=1369798757',
+      // })
     },
 
     /**

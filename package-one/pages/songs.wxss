@@ -1,63 +1,100 @@
 /* package-one/pages/songs.wxss */
-.page{
+
+.page {
   width: 100%;
   height: 100vh;
 }
-.song-swiper,.songs-index1-scroll-view {
-  height: 830rpx;
+
+.song-swiper, .songs-index1-scroll-view {
+  height: 850rpx;
 }
-.songs-swiper-view{
+
+.songs-swiper-view {
   margin-top: 88rpx;
 }
+
 .song-swiper .wx-swiper-dot {
   width: 39rpx;
   height: 6rpx;
   border-radius: 3rpx;
 }
+
 .song-swiper .wx-swiper-dots {
-    position: relative;
-    /* left: unset !important;
+  position: relative;
+  /* left: unset !important;
     right: 0; */
-    top: 0;
+  top: 0;
 }
-.songs-play-view{
+
+.songs-play-view {
   width: 100%;
-  height: 262rpx;
 }
-.songs-play-slider-view{
+
+.songs-play-slider-view {
   padding: 0rpx 20rpx;
 }
 
-.songs-play-time label{
-  font-size:28rpx;
-  font-family:Roboto-Medium;
-  color:rgba(255,255,255,1);
+.songs-play-time label {
+  font-size: 28rpx;
+  font-family: Roboto-Medium;
+  color: rgba(255, 255, 255, 1);
 }
-.songs-play-time label:first-child{
+
+.songs-play-time label:first-child {
   float: left;
   margin-left: 40rpx;
 }
-.songs-play-time label:last-child{
+
+.songs-play-time label:last-child {
   float: right;
   margin-right: 50rpx;
 }
-.songs-play-m{
+
+.songs-play-m {
   width: 100%;
   height: 146rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.songs-play-m .play-type-view{
+
+.songs-play-m .play-type-view {
   width: 32rpx;
-  height: 32rpx;
+  height: 35rpx;
   margin-left: 40rpx;
 }
-.play-type-view image{
+
+.play-type-view image {
   width: 32rpx;
-  height: 32rpx;
+  height: 35rpx;
 }
-.paly-top-view,.paly-top-view image{
-  width: 24rpx;
-  height: 24rpx;
+
+.paly-top-view, .paly-top-view image, .play-next-view, .play-next-view image {
+  width: 32rpx;
+  height: 35rpx;
+}
+
+.paly-play-view {
+  width: 146rpx;
+  height: 146rpx;
+  background: linear-gradient(97deg, rgba(142, 0, 76, 1) 0%, rgba(81, 0, 77, 1) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paly-play-view image {
+  width: 48rpx;
+  height: 55rpx;
+}
+.paly-play-view .stop{
+  margin-left: 10rpx;
+}
+.play-shuaxin-view{
+  margin-right: 50rpx;
+}
+.play-shuaxin-view, .play-shuaxin-view image {
+  width: 32rpx;
+  height: 35rpx;
 }

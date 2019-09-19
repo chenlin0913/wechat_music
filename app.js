@@ -9,10 +9,15 @@ App({
       url: this.globalData.api+url,
       method: method,
       data: data,
-      // header: {
-      //   'content-type': method == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded',
-      //   'Accept': 'application/json'
-      // },
+      header: {
+        'Host': 'music.163.com',
+        'Origin': 'http://music.163.com',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Referer':'http://music.163.com/search/',
+        // 'content-type': method == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded',
+        // 'Accept': 'application/json'
+      },
       // dataType: 'json',
       success: function(res) {
         callback(res.data);
@@ -59,7 +64,9 @@ App({
     this.globalData.statusBarHeight = res.statusBarHeight * 2; //有头部导航栏时
   },
   globalData: {
-    api: 'http://musicapi.leanapp.cn/',
+    api: 'https://musicapi.leanapp.cn/',
+    // api: 'https://music.163.com/',
+    // api:'http://p4.music.126.net',
     userInfo: null,
     statusBarHeight: 0,
     play:{

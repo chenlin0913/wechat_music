@@ -32,6 +32,7 @@
   font-size: 26rpx;
   font-family: Roboto-Regular;
   color: rgba(255, 255, 255, 1);
+  margin-top: 10rpx;
 }
 
 .animation-image {
@@ -73,7 +74,7 @@
 .play-songs-lyrics {
   padding: 0rpx 30rpx;
   text-align: center;
-  margin-top: 58rpx;
+  margin-top: 48rpx;
   font-size: 28rpx;
   font-family: Roboto-Regular;
   color: rgba(122, 124, 129, 1);

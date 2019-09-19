@@ -17,13 +17,13 @@
         </swiper-item>
       </swiper>
     </view>
-    <view class="songs-play-view" bindtap="updatePlayStatus">
+    <view class="songs-play-view">
       <view class="songs-play-slider-view">
-        <slider bindchange="sliderChange" min="0" max="100" backgroundColor="#BDB9B9" activeColor="#707070" block-size="14"/>
+        <slider bindchanging="sliderChange" step="0.1" min="0" max="100" backgroundColor="#BDB9B9" activeColor="#707070" block-size="14" value="{{sliderVal}}"/>
       </view>
       <view class="songs-play-time">
-        <label>00:00</label>
-        <label>3:05</label>
+        <label>{{start}}</label>
+        <label>{{end}}</label>
       </view>
       <view class="songs-play-m">
         <view class="play-type-view">
@@ -35,8 +35,15 @@
         <view class="paly-top-view">
           <image src="../../image/icon_play_top.svg"></image>
         </view>
-        <view class="paly-play-view">
-        <!-- <image src=""></image> -->
+        <view class="paly-play-view" bindtap="updatePlayStatus">
+          <image src="../../image/songs_stop.svg" wx:if="{{status=='paused'}}" class="stop"></image>
+          <image src="../../image/songs_play.svg" wx:else></image>
+        </view>
+        <view class="play-next-view">
+          <image src="../../image/icon_play_next.svg"></image>
+        </view>
+        <view class="play-shuaxin-view">
+          <image src="../../image/shuaxin.svg"></image>
         </view>
       </view>
     </view>

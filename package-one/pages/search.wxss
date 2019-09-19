@@ -1,5 +1,7 @@
 /* package-one/pages/search.wxss */
-
+page{
+  background-color: #0E0B1F;
+}
 .search-list-view {
   height: 114rpx;
   margin-top: 42rpx;
